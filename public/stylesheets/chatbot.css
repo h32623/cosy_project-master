@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway");
+@import url("//cdn.jsdelivr.net/font-kopub/1.0/kopubdotum.css");
 /*#ffc6b0;*/
 /*#ade0ff*/
 /* body {
@@ -9,19 +10,23 @@
     padding: 0;
     -webkit-box-sizing: border-box;
             box-sizing: border-box; } */
+
 .chat{
-    background-color: white;
-    width:65%;
-    height:500px;
-    top: 10%;
-    margin-left: 15%;
+    background:rgba(255, 255, 255, 0.3);
+    width:550px;
+    height:550px;
+    max-height: 100%;
+    margin-top: 5%;
+    margin-left: 30%;
+    margin-right: 30%;
+
     display: flex;
     justify-content: space-between;
     align-items:flex-start;
     flex-wrap:wrap;
     text-overflow: ellipsis;
     box-shadow: 0 8px 38px rgba(133, 133, 133, 0.3), 0 5px 12px rgba(133, 133, 133,0.22);
-    border-radius: 20px;
+    border-radius: 100%;
     position: relative;
     z-index: 2;
     overflow:auto;
@@ -74,10 +79,100 @@
     box-shadow: -10px 19px 38px rgba(83, 83, 83, 0.3), 10px 15px 12px rgba(80,80,80,0.22);
 }
 
+
+
+
+
+
+
+
+.chat .select__chat1 {
+  width: 130px;
+  height: 80px;
+  border: none;
+  border-radius: 50px;
+  background:rgba(255, 255, 255, 0.25);
+  margin-left : 20%;
+  position: relative;
+  text-align: center;
+  color: #FFFFFF;
+  float : left;
+  z-index: 1;
+  cursor: pointer;
+  outline: none;
+  font-family: 'KoPub Dotum', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+}
+.chat .select__chat1:hover {
+  background-color: #5a1e82;
+}
+
+.chat .select__chat2 {
+  width: 130px;
+  height: 80px;
+  border: none;
+  border-radius: 50px;
+  background:rgba(255, 255, 255, 0.25);
+  margin-right : 20%;
+  position: relative;
+  text-align: center;
+  float : right;
+  color: #FFFFFF;
+  z-index: 1;
+  cursor: pointer;
+  outline: none;
+  font-family: 'KoPub Dotum', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+}
+.chat .select__chat2:hover {
+  background-color: #5a1e82;
+}
+
+.chat .chat__buttons {
+
+      padding: 40% 10px 50px 10px;
+      font-family: 'KoPub Dotum', sans-serif;
+      font-weight: 500;
+      /* font-family: 'Raleway', sans-serif; */
+      max-width: 600px;
+      margin: 0 auto;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      position: relative;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #5a1e82;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+
+
+
 #freud {
-    padding: 0px;
-    font-family: 'Raleway', sans-serif;
-    max-width: 700px;
+    padding: 50px 10px;
+    font-family: 'KoPub Dotum', sans-serif;
+    font-weight: 500;
+    /* font-family: 'Raleway', sans-serif; */
+    max-width: 600px;
     margin: 0 auto;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -105,24 +200,26 @@
     padding: .5em .8em;
     width: 100%;
     text-align: center; }
-/*#freud * {
+#freud * {
     margin: 0;
     padding: 0;
     -webkit-box-sizing: border-box;
-    box-sizing: border-box; }*/
+    box-sizing: border-box; }
 #freud .freud-icon {
+    display:none;
     -webkit-transition: all 0.4s cubic-bezier(0.3, -0.5, 0.3, 1.3);
     transition: all 0.4s cubic-bezier(0.3, -0.5, 0.3, 1.3);
     position: absolute;
     width: 60px;
     height: 60px;
-    border: 1px solid #ccc;
+    border: 0px;
+    /* border: 1px solid #ccc; */
     border-radius: 100%;
     overflow: hidden; }
 #freud .freud-icon img {
     width: 100%; }
 #freud .freud-icon.__bot {
-    background: #fff;
+    /* background: #fff; */
     border: 0;
     top: 0;
     left: 0; }
@@ -158,7 +255,9 @@
 #freud .freud-quote.__bot .freud-sentence .__elem {
     background: white;
     color: black;
-    text-align: left; }
+    text-align: left;
+    font-size: 0.8em;
+}
 #freud .freud-quote.__bot .freud-sentence .__r {
     text-align: left;
     width: 100%; }
@@ -196,7 +295,7 @@
     display: inline-block;
     text-decoration: none;
     padding: .6em 1.2em;
-    font-size: 1em;
+    font-size: 0.8em;
     font-weight: 700;
     border-radius: 20px;
     margin-top:10px;
@@ -229,7 +328,9 @@
 #freud .freud-quote .freud-sentence .__elem {
     -webkit-box-shadow: 0 10px 40px -14px rgba(0, 0, 0, 0.45);
     box-shadow: 0 10px 40px -14px rgba(0, 0, 0, 0.45);
-    border: 1px solid #d6d6d6;
+    /* border: 1px solid #d6d6d6; */
+    font-size: 0.8em;
+    border: 0px;
     -webkit-transition: all 0.25s cubic-bezier(0.3, -0.5, 0.3, 2);
     transition: all 0.25s cubic-bezier(0.3, -0.5, 0.3, 2);
     -webkit-transform: scale(0);

@@ -263,3 +263,52 @@
 </div>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+    <% if (user.provider == undefined || user.provider == '') { %>
+    <h3><span class="fa fa-user"></span> 로컬 프로필</h3>
+    <br>
+    <p>
+        <button id="hide">Hide</button>
+        <strong>이메일</strong>: <%= user.id_email %><br><br>
+        <strong>별명</strong>: <%= user.name %>
+        <strong>별명</strong>: <%= user.image %>
+        <img src="<%=user.image%>" alt="이미지 설명" />
+        <!--
+        $(document).ready(function(){
+        $("#hide").click(function(){
+        });
+        }
+        -->
+    </p>
+    <% } else if (user.provider == 'google') { %>
+    <h3 class="text-primary"><span class="fa fa-google"></span> 구글 프로필</h3>
+    <br>
+    <p>
+        <strong>아이디</strong>: <%= user.google.id %><br><br>
+        <strong>이메일</strong>: <%= user.google.id_email %><br><br>
+        <strong>이름</strong>: <%= user.google.name %>
+    </p>
+    <% } %>
+</div>

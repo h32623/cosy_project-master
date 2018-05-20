@@ -19,18 +19,16 @@ module.exports = function(app, passport) {
         console.log('passport의 google 호출됨.');
         console.dir(profile);
 
-        var options = {
-            criteria: { 'google.id': profile.id }
-        };
-
         // load -> findOne Change
         var database = app.get('database');
-        database.UserModel.findOne(options, function (err, user) {
+        database.UserModel.findOne({ 'id_email': profile.emails[0].value }, function (err, user) {
             if (err) return done(err);
 
             console.log("좀 나와라 ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ"
-                + profile.picture + profile._json.image.url)
+                + profile.picture + profile._json.image.url);
+
             if (!user) {
+              console.log('없어ㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓ');
                 var user = new database.UserModel({
                     name: profile.displayName,
                     id_email: profile.emails[0].value,
@@ -44,12 +42,14 @@ module.exports = function(app, passport) {
                 });
 
                 user.save(function (err) {
-                    if (err) console.log(err);
                     return done(err, user);
                 });
-            } else {
+
+            } else {                  // 구글 로그인 실패한 경우
+                console.log('있어ㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓ');
                 return done(err, user);
             }
         });
+
     });
 };
